@@ -48,6 +48,7 @@ function renderGame() {
     } else {
         callmessage.textContent = "Your score went over 21. Better luck next time!"
         isAlive = false
+        document.getElementById("drawNew").disabled = true
     }
     if (isAlive==true && hasBlackJack==false && document.getElementById("drawNew").disabled == true) {
         callmessage.textContent = "Better luck next time!"
