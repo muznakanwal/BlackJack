@@ -7,7 +7,7 @@ let hasBlackJack = false
 let isAlive = true
 let cards = [firstNumber, secondNumber]
 let totalSum = 0
-// let randomnumber = Math.floor((Math.random()*11)+1)
+//let randomnumber = Math.floor((Math.random()*11)+1)
 
 
 let callh1 = document.getElementById("welcome")
@@ -17,11 +17,25 @@ let callsum = document.getElementById("sum")
 
 callh1.textContent += ", " + userName + "!"
 
-function renderGame() {
-    totalSum = firstNumber + secondNumber
+function renderGame() {    
+    // for (let i = 0; i < cards.length; i++) {
+    //     cards(i)
+    // } return cards
+    // console.log(cards)
+    console.log(firstNumber)
+    console.log(secondNumber)
+    console.log(thirdNumber)
+    
+    let sum = 0
+    for (let i = 0; i < cards.length; i++){
+        sum += cards[i];
+    }
+    totalSum = sum
+
     document.getElementById("start").disabled = true
-    for (let i = 0; i < cards.length; i++)
-    callcards.textContent = "Cards: " + cards
+    callcards.textContent = "Cards: " 
+    for (let i = 0; i < cards.length; i++){
+    callcards.textContent += cards[i] + ", "}
     callsum.textContent = "Sum: " + totalSum
     // console.log(cards)
 
@@ -43,8 +57,7 @@ function renderGame() {
 function newCard(){
     document.getElementById("drawNew").disabled = true
     cards.push(thirdNumber)
-    totalSum = cards.reduce(function(a,b){return a+b;}, 0)
-    // console.log(totalSum)
+    //console.log(totalSum)
     renderGame()
 }
 
@@ -59,5 +72,7 @@ function resetGame() {
     thirdNumber = Math.floor((Math.random()*13)+1)
     cards.pop()
     totalSum = 0
+    hasBlackJack = false
+    isAlive = true
 }
 
