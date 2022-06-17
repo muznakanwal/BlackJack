@@ -1,4 +1,4 @@
-let userName = "Muzna Kanwal"
+let userName = prompt("Please enter your name")
 
 let firstNumber = Math.floor((Math.random()*13)+1)
 let secondNumber = Math.floor((Math.random()*13)+1)
@@ -15,7 +15,11 @@ let callmessage = document.getElementById("message")
 let callcards = document.getElementById("cards")
 let callsum = document.getElementById("sum")
 
+
 callh1.textContent += ", " + userName + "!"
+// function hello(){
+//     console.log("this is from hello")
+// }
 
 function renderGame() {    
     // for (let i = 0; i < cards.length; i++) {
@@ -33,9 +37,9 @@ function renderGame() {
     totalSum = sum
 
     document.getElementById("start").disabled = true
-    callcards.textContent = "Cards: " 
+    callcards.textContent = "Cards: | " 
     for (let i = 0; i < cards.length; i++){
-    callcards.textContent += cards[i] + ", "}
+    callcards.textContent += cards[i] + " | "}
     callsum.textContent = "Sum: " + totalSum
     // console.log(cards)
 
@@ -63,15 +67,18 @@ function newCard(){
 }
 
 function resetGame() {
+    //location.reload()
     document.getElementById("drawNew").disabled = false
     document.getElementById("start").disabled = false
     callmessage.textContent = "Would you like to play a game?"
     callcards.textContent = "Cards: "
     callsum.textContent = "Sum: "
+    cards.pop()
     firstNumber = Math.floor((Math.random()*13)+1)
     secondNumber = Math.floor((Math.random()*13)+1)
     thirdNumber = Math.floor((Math.random()*13)+1)
-    cards.pop()
+    cards = [firstNumber, secondNumber]
+    console.log(cards)
     totalSum = 0
     hasBlackJack = false
     isAlive = true
