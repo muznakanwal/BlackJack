@@ -14,7 +14,8 @@ let callh1 = document.getElementById("welcome")
 let callmessage = document.getElementById("message")
 let callcards = document.getElementById("cards")
 let callsum = document.getElementById("sum")
-
+let elemnt = document.getElementById("img")
+    elemnt.style.visibility = "hidden";
 
 callh1.textContent += ", " + userName + "!"
 // function hello(){
@@ -49,6 +50,9 @@ function renderGame() {
         callmessage.textContent = "Congratulations! You've got BlackJack!"
         document.getElementById("drawNew").disabled = true
         hasBlackJack = true
+        // const elemnt = document.getElementById("img")
+        elemnt.style.visibility = "visible";
+        console.log(elemnt)
     } else {
         callmessage.textContent = "Your score went over 21. Better luck next time!"
         isAlive = false
@@ -70,6 +74,7 @@ function resetGame() {
     //location.reload()
     document.getElementById("drawNew").disabled = false
     document.getElementById("start").disabled = false
+    elemnt.style.visibility = "hidden";
     callmessage.textContent = "Would you like to play a game?"
     callcards.textContent = "Cards: "
     callsum.textContent = "Sum: "
