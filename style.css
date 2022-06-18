@@ -20,4 +20,10 @@ button {
     padding-top: 12px;
     padding-bottom: 12px;
 }
-
+.container{
+    text-align: center;
+    color: white;
+    position: absolute;
+    left: 35%;
+    height: 10px;
+}
